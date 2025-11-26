@@ -70,8 +70,8 @@ jobs:
     # Write JSOn to temporary file
     - name: Setup gcp credentials
       run: |
-        echo "${{ secrets.GCP_SA_KEY }}" > $ {{github.workspace}}/gcp-key.json
-        export GOOGLE_APPLICATION_CREDENTIALS="${{github.workspace}}/gcp-key.json"
+        echo "${{ secrets.GCP_SA_KEY }}" > ${{ github.workspace }}/gcp-key.json
+        export GOOGLE_APPLICATION_CREDENTIALS="${{ github.workspace }}/gcp-key.json"
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
